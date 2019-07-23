@@ -37,7 +37,7 @@ class CommentForm extends Component {
     return (
       <div className="ml-0">
         <Button outline onClick={ this.toggleModal }>
-          <span className="fa fa-pencil"> Submit Comment</span>
+          <span className="fa fa-pencil fa-lg"> Submit Comment</span>
         </Button>
 
         <Modal isOpen={ this.state.isModalOpen } toggle={ this.toggleModal }>
@@ -58,14 +58,14 @@ class CommentForm extends Component {
               </Row>
 
               <Row className="form-group">
-                <Label htmlFor="name" md={12}>Your Name</Label>
+                <Label htmlFor="author" md={12}>Your Name</Label>
                 <Col md={12}>
-                  <Control.text model=".name" id="name" name="name"
+                  <Control.text model=".author" id="author" name="author"
                     className="form-control" placeholder="Your Name" validators={{
                       required, minLength: minLength(3), maxLength: maxLength(15)
                     }}
                   />
-                  <Errors className="text-danger" model=".name"
+                  <Errors className="text-danger" model=".author"
                       show="touched" messages={{
                         required: 'Required',
                         minLength: ' Must be greater than 2 characters',

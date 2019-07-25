@@ -18,7 +18,7 @@ function RenderCard({ item, isLoading, errMsg }) {
   else {
     console.log("Info: " + JSON.stringify(item));
     return (
-      <FadeTransform in transformProps={{
+      <FadeTransform in={true} transformProps={{
         exitTransform: 'scale(0.5) translateY(-50%)'
       }}>
       <Card>
@@ -53,7 +53,11 @@ function Home(props) {
           />
         </div>
         <div className="col-12 col-md m-1">
-          <RenderCard item={ props.leader }  />
+          <RenderCard
+            item={ props.leader }
+            isLoading={ props.leadersLoading }
+            errMsg={ props.leadersErrMsg }
+          />
         </div>
       </div>
     </div>

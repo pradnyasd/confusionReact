@@ -102,7 +102,7 @@ const RenderDish = ({ dish }) => {
   if(dish !== null) {
     return (
       <div className="col-12 col-md-5 m-1">
-        <FadeTransform in="true" transformProps={{
+        <FadeTransform in={true} transformProps={{
           exitTransform: 'scale(0.5) translateY(-50%)'
         }}>
           <Card>
@@ -129,7 +129,7 @@ const RenderComments = ({ comments, postComment, dishId }) => {
       return (
         <div key={c.id}>
           <ul className="list-unstyled">
-            <Fade in="true">
+            <Fade in={true}>
               <li>
                 <p>{ c.comment }</p>
                 <p> -- { c.author }, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(c.date)))}</p>
@@ -142,7 +142,7 @@ const RenderComments = ({ comments, postComment, dishId }) => {
     return (
       <div className="col-12 col-md-5 m-1">
           <h4>Comments</h4>
-          <Stagger in="true">
+          <Stagger in={true}>
             { commentsList }
           </Stagger>
           <CommentForm dishId={ dishId } postComment={ postComment } />
